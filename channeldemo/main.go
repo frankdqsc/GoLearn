@@ -36,4 +36,5 @@ func main()  {
 	//num4 := <-intChan
 	//num5 := <-intChan
 	fmt.Println("num3=",num3)
+	
 }
