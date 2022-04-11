@@ -51,4 +51,5 @@ func main(){
 		fmt.Printf("map[%d]=%d\n",i,v)
 	}
 	lock.Unlock()
+	
 }
