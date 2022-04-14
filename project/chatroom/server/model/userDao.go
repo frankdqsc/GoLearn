@@ -3,7 +3,7 @@ package model
 import (
 	"encoding/json"
 	"fmt"
-	"go_code/chatroom/common/message"
+	"go_code/Learn-Go/project/chatroom/common/message"
 
 	"github.com/garyburd/redigo/redis"
 )

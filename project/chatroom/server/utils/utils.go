@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
-	"go_code/chatroom/common/message"
+	"go_code/Learn-Go/project/chatroom/common/message"
 	"net"
 )
 

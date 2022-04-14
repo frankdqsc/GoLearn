@@ -3,7 +3,7 @@ package process
 import (
 	"encoding/json"
 	"fmt"
-	"go_code/chatroom/common/message"
+	"go_code/Learn-Go/project/chatroom/common/message"
 )
 
 //用来管理message

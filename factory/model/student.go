@@ -1,8 +1,8 @@
 package model
 
 //定义一个结构体
-type student struct{
-	Name string
+type student struct {
+	Name  string
 	Score float64
 }
 
@@ -10,8 +10,8 @@ type student struct{
 //此时 通过工厂模式解决
 
 func NewStudent(n string, s float64) *student {
-	return &student {
-		Name : n,
-		Score : s,
+	return &student{
+		Name:  n,
+		Score: s,
 	}
 }

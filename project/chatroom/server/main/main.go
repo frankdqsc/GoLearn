@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go_code/chatroom/server/model"
+	"go_code/Learn-Go/project/chatroom/server/model"
 	"net"
 	"time"
 )

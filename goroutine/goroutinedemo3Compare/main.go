@@ -18,10 +18,9 @@ func main() {
 			}
 		}
 		if flag {
-			fmt.Println("num: ", num) //计算算法时间不算打印部分
+			//fmt.Println("num: ", num) //计算算法时间不算打印部分
 		}
 	}
 	elapsed := time.Since(t1)
 	fmt.Println("time: ", elapsed)
-	
 }

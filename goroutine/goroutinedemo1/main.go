@@ -1,9 +1,9 @@
 package main
 
-import(
+import (
 	"fmt"
-	"time"
 	"sync"
+	"time"
 )
 
 //要求：现在要计算1-200各个数的阶乘，并把各个数的阶乘放到map中
@@ -19,13 +19,14 @@ import(
 //2.channel
 
 var (
-	myMap = make(map[int]int,10)
+	myMap = make(map[int]int, 10)
 	//声明一个全局互斥锁  lock是全局互斥锁  sync是包 synchornized同步  Mutex互斥
 	lock sync.Mutex
 )
-func test(n int){
+
+func test(n int) {
 	res := 1
-	for i:=1; i<=n; i++{
+	for i := 1; i <= n; i++ {
 		res *= i
 	}
 	//将res放入到myMap
@@ -36,20 +37,19 @@ func test(n int){
 	lock.Unlock()
 }
 
-func main(){
+func main() {
 	//在这里开启多个协程完成这个任务 200个
-	for i:=1;i<=20;i++{
+	for i := 1; i <= 20; i++ {
 		go test(i)
 	}
 
 	//休眠10秒
-	time.Sleep(time.Second*3)  //这里不知道子程序多久才能运行完 →channel
+	time.Sleep(time.Second * 3) //这里不知道子程序多久才能运行完 →channel
 
 	//输出结果
 	lock.Lock()
-	for i,v:=range myMap{
-		fmt.Printf("map[%d]=%d\n",i,v)
+	for i, v := range myMap {
+		fmt.Printf("map[%d]=%d\n", i, v)
 	}
 	lock.Unlock()
-	
 }

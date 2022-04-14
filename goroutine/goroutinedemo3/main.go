@@ -22,7 +22,6 @@ func putNum(intChan chan int) { //协程
 //从intChan取出数据 并判断是否为素数 如果是放入到primeChan
 func primeNum(intChan chan int, primeChan chan int, exitChan chan bool) {
 	//使用for循环
-	//var num int
 	//time.Sleep(time.Millisecond * 10)
 	var flag bool
 	for {
@@ -49,26 +48,29 @@ func primeNum(intChan chan int, primeChan chan int, exitChan chan bool) {
 }
 
 func main() {
-	t1 := time.Now() //计算算法时间
 
 	intChan := make(chan int, 1000)
 	primeChan := make(chan int, 2000) //放入结果
 	//标识退出的管道
-	exitChan := make(chan bool, 4) //4个
+	exitChan := make(chan bool, 8) //4个
+
+	t1 := time.Now() //计算算法时间
 
 	//开启一个协程，向intChan放入1-8000个数
 	go putNum(intChan)
 
 	//开启4个协程 从intChan取出数据，并判断是u否为素数，如果是就放入primeChan
-	//放入到primeChan
 	for i := 0; i < 8; i++ {
 		go primeNum(intChan, primeChan, exitChan)
 	}
 
 	//这里进行主线程处理，防止主线程过快结束
 	go func() { //匿名函数
-		for i := 0; i < 4; i++ {
+
+		for i := 0; i < 8; i++ {
 			<-exitChan
+			//s := <-exitChan
+			//fmt.Println(s)
 		}
 		//当我们从exitChan中取出4个结果 就可以关闭primeChan
 
@@ -89,5 +91,6 @@ func main() {
 	}
 
 	fmt.Println("main线程退出")
-	
 }
+
+// 8个协程 time:  5.9844ms

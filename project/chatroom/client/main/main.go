@@ -1,9 +1,13 @@
 // main.go 显示第一级菜单 根据用户的输入去调用相应的处理器
+
+//go build -o server.exe go_code/Learn_Go/project/chatroom/server/main
+//go build -o client.exe go_code/Learn_Go/project/chatroom/client/main
 package main
 
 import (
 	"fmt"
-	"go_code/chatroom/client/process"
+	//"go_code/chatroom/client/process"
+	"go_code/Learn-Go/project/chatroom/client/process"
 	"os"
 )
 

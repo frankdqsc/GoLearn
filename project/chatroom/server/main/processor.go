@@ -4,9 +4,9 @@ package main
 
 import (
 	"fmt"
-	"go_code/chatroom/common/message"
-	process2 "go_code/chatroom/server/process"
-	"go_code/chatroom/server/utils"
+	"go_code/Learn-Go/project/chatroom/common/message"
+	process2 "go_code/Learn-Go/project/chatroom/server/process"
+	"go_code/Learn-Go/project/chatroom/server/utils"
 	"io"
 	"net"
 )
@@ -25,6 +25,7 @@ func (this *Processor) serverProcessMes(mes *message.Message) (err error) {
 
 	switch mes.Type {
 	case message.LoginMesType:
+		netpool
 		//处理登录
 		//创建一个 UserProcess 实例
 		up := &process2.UserProcess{

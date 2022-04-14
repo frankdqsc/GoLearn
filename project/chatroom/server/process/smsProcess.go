@@ -3,8 +3,8 @@ package process2
 import (
 	"encoding/json"
 	"fmt"
-	"go_code/chatroom/common/message"
-	"go_code/chatroom/server/utils"
+	"go_code/Learn-Go/project/chatroom/common/message"
+	"go_code/Learn-Go/project/chatroom/server/utils"
 	"net"
 )
 

@@ -1,13 +1,13 @@
 package main
 
-import(
-	"runtime"
+import (
 	"fmt"
+	"runtime"
 )
 
-func main(){
+func main() {
 	cpuNum := runtime.NumCPU()
-	fmt.Println("cpuNum=",cpuNum)
+	fmt.Println("cpuNum=", cpuNum)
 
 	//可以自己设置使用多个cpu
 	runtime.GOMAXPROCS(cpuNum - 1)
